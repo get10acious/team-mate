@@ -1,0 +1,118 @@
+{
+  "classes": [
+    {
+      "class": "Document",
+      "description": "A document class to store documents used for knowledge base",
+      "properties": [
+        {
+          "name": "title",
+          "dataType": ["text"],
+          "description": "The title of the document"
+        },
+        {
+          "name": "content",
+          "dataType": ["text"],
+          "description": "The entire content of the document"
+        },
+        {
+          "name": "wordCount",
+          "dataType": ["int"],
+          "description": "The word count of the content"
+        },
+        {
+          "name": "url",
+          "dataType": ["text"],
+          "description": "The URL of the document"
+        }
+      ]
+    },
+    {
+      "class": "DocumentChunk",
+      "description": "Chunks of Documentations",
+      "properties": [
+        {
+          "name": "document",
+          "dataType": ["Document"],
+          "description": "Reference to document"
+        },
+        {
+          "name": "text",
+          "dataType": ["text"],
+          "description": "Content of the chunk"
+        },
+        {
+          "name": "doc_name",
+          "dataType": ["text"],
+          "description": "Document name"
+        }
+      ],
+      "vectorizer": "text2vec-openai"
+    },
+    {
+      "class": "Response",
+      "description": "Chatbot responses and associated user prompts",
+      "properties": [
+        {
+          "name": "prompt",
+          "dataType": ["text"],
+          "description": "User prompt"
+        },
+        {
+          "name": "responseText",
+          "dataType": ["text"],
+          "description": "Chatbot response"
+        },
+        {
+          "name": "liked",
+          "dataType": ["boolean"],
+          "description": "Whether the response was liked"
+        },
+        {
+          "name": "response_id",
+          "dataType": ["text"],
+          "description": "Unique ID of the response"
+        },
+        {
+          "name": "session_id",
+          "dataType": ["text"],
+          "description": "Session ID associated with the response"
+        }
+      ],
+      "vectorizer": "text2vec-openai"
+    },
+    {
+      "class": "DocumentChunkReference",
+      "description": "Links DocumentChunk that was used for a Response",
+      "properties": [
+        {
+          "name": "document",
+          "dataType": ["DocumentChunk"],
+          "description": "Linked DocumentChunk"
+        },
+        {
+          "name": "response",
+          "dataType": ["Response"],
+          "description": "The chatbot response"
+        }
+      ],
+      "vectorizer": "text2vec-openai"
+    },
+    {
+      "class": "ResponseReference",
+      "description": "Links previous Response that was used for a Response as an example response",
+      "properties": [
+        {
+          "name": "response",
+          "dataType": ["Response"],
+          "description": "The chatbot response"
+        },
+        {
+          "name": "referenced_response",
+          "dataType": ["Response"],
+          "description": "The referenced chatbot response"
+        }
+      ],
+      "vectorizer": "text2vec-openai"
+    }
+  ]
+}
