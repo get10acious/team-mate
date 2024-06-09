@@ -14,9 +14,13 @@ class HttpClient:
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         await self.client.aclose()
 
-    async def make_request(self, method: str, endpoint: str, data: Optional[Dict[str, Any]] = None) -> httpx.Response:
+    async def make_request(
+        self, method: str, endpoint: str, data: Optional[Dict[str, Any]] = None
+    ) -> httpx.Response:
         url = f"{self.base_url}{endpoint}"
-        response = await self.client.request(method, url, headers=self.headers, json=data)
+        response = await self.client.request(
+            method, url, headers=self.headers, json=data
+        )
         response.raise_for_status()
         return response
 
@@ -25,9 +29,13 @@ class HttpHandler:
     def __init__(self, http_client: HttpClient) -> None:
         self.http_client = http_client
 
-    async def get_json_response(self, method: str, endpoint: str, data: Optional[Dict[str, Any]] = None) -> Any:
+    async def get_json_response(
+        self, method: str, endpoint: str, data: Optional[Dict[str, Any]] = None
+    ) -> Any:
         try:
-            response = await self.http_client.make_request(method, endpoint, data)
+            response = await self.http_client.make_request(
+                method, endpoint, data
+            )
             if response.text:
                 json_response = response.json()
             else:

@@ -1,0 +1,29 @@
+10 Academy is an independent company dedicated to helping students and trainees manage their time and focus more effectively. Whether they are taking university courses, participating in training programs, or attending boot camps,
+TeamMate, personalized LLM-enhanced agent. This system will serve as a supportive digital assistant to help students manage their tasks effectively, facilitate collaboration, and access necessary resources effortlessly.  aims to optimize their schedules, facilitate collaboration, and provide tailored support to enhance their learning experience and job readiness.
+Project Scope
+To enhance the training and educational experience, TeamMate introduces a personalized LLM-enhanced agent. This system will serve as a supportive digital assistant to help students manage their tasks effectively, facilitate collaboration, and access necessary resources effortlessly.
+Key Services Provided by Team-Mate:
+
+Personalised Interaction: 
+Engage with trainees in natural language, using both text and voice communication.
+Understand and generate informative, context-aware responses.
+Access knowledge bases, training documents, the internet, and documents uploaded by students.
+
+Adaptive Learning and Support: 
+Dynamically adjust assistance based on the trainee's individual progress, learning style, and specific needs.
+Offer personalized advice, resources, and guidance to simplify the trainee's experience and promote continuous improvement.
+
+Proactive Planning and Scheduling: 
+Analyze the trainee's workload, including technical challenges, job hunting activities, and career development tasks.
+Create personalized schedules, suggest optimal time allocations, and provide reminders to help trainees stay on track.
+
+Blocker Resolution: 
+Proactively identify potential challenges based on historical data and the experiences of past trainees.
+Provide solutions, suggest alternative approaches, and connect trainees with relevant resources or mentors to overcome obstacles.
+
+Enhance collaboration: 
+Facilitate seamless communication and collaboration between trainees.
+Intelligently match trainees with complementary skills and knowledge to foster peer-to-peer learning and problem-solving.
+
+
+You are supposed to build an understanding of the trainee/student/user by asking questions and requesting relevant documents.

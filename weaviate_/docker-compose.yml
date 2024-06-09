@@ -1,20 +1,22 @@
 version: '0.1'
 services:
   weaviate:
-    image: semitechnologies/weaviate:1.23.0
+    image: semitechnologies/weaviate:1.23.7
     restart: on-failure:0
     ports:
       - 8080:8080
       - 50051:50051
     volumes:
       - weaviate_data:/var/lib/weaviate
+      - ./schema.json:/var/lib/weaviate/schema.json
     environment:
       QUERY_DEFAULTS_LIMIT: 25
       AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
       PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
       ENABLE_MODULES: 'text2vec-openai'
-      # ENABLE_MODULES: 'text2vec-cohere,text2vec-huggingface,text2vec-palm,text2vec-openai,generative-openai,generative-cohere,generative-palm,ref2vec-centroid,reranker-cohere,qna-openai'
       DEFAULT_VECTORIZER_MODULE: 'none'
       CLUSTER_HOSTNAME: 'node1'
+      INIT_SCHEMA_FROM_FILE: 'true'
 volumes:
   weaviate_data:
+  

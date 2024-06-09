@@ -113,6 +113,96 @@
         }
       ],
       "vectorizer": "text2vec-openai"
-    }
+    },
+
+    {
+      "class": "JobPosting",
+      "description": "Job postings from various sources",
+      "vectorizer": "text2vec-openai",
+      "vectorIndexType": "hnsw",
+      "vectorIndexConfig": {
+        "distance": "cosine"
+      },
+      "properties": [
+        {
+          "name": "title",
+          "dataType": ["text"],
+          "description": "Job title",
+          "vectorizer": "text2vec-openai",
+          "vectorIndexConfig": {
+            "distance": "cosine"
+          }
+        },
+        {
+          "name": "company",
+          "dataType": ["text"],
+          "description": "Company name",
+          "vectorizer": "text2vec-openai",
+          "vectorIndexConfig": {
+            "distance": "cosine"
+          }
+        },
+        {
+          "name": "company_link",
+          "dataType": ["text"],
+          "description": "Link to the company profile",
+          "vectorizer": "text2vec-openai",
+          "vectorIndexConfig": {
+            "distance": "cosine"
+          }
+        },
+        {
+          "name": "location",
+          "dataType": ["text"],
+          "description": "Job location",
+          "vectorizer": "text2vec-openai",
+          "vectorIndexConfig": {
+            "distance": "cosine"
+          }
+        },
+        {
+          "name": "date_posted",
+          "dataType": ["date"],
+          "description": "Date the job was posted"
+        },
+        {
+          "name": "apply_link",
+          "dataType": ["text"],
+          "description": "Link to apply for the job"
+        },
+        {
+          "name": "post_link",
+          "dataType": ["text"],
+          "description": "Link to the original job posting"
+        },
+        {
+          "name": "seniority_level",
+          "dataType": ["string"],
+          "description": "Seniority level required for the job",
+          "vectorizer": "text2vec-openai",
+          "vectorIndexConfig": {
+            "distance": "cosine"
+          }
+        },
+        {
+          "name": "employment_type",
+          "dataType": ["string"],
+          "description": "Type of employment (full-time, part-time, etc.)",
+          "vectorizer": "text2vec-openai",
+          "vectorIndexConfig": {
+            "distance": "cosine"
+          }
+        },
+        {
+          "name": "description",
+          "dataType": ["text"],
+          "description": "Job description",
+          "vectorizer": "text2vec-openai",
+          "vectorIndexConfig": {
+            "distance": "cosine"
+          }
+        }
+      ]
+    }    
   ]
 }
